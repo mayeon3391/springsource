@@ -29,7 +29,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-@Setter
+// @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -51,4 +51,8 @@ public class Memo {
     @Column(nullable = false)
     @LastModifiedDate
     private LocalDateTime updatedDate;
+
+    public void changeMemoText(String memoText) {
+        this.memoText = memoText;
+    }
 }
