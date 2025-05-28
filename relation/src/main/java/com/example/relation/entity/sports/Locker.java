@@ -1,5 +1,7 @@
 package com.example.relation.entity.sports;
 
+import com.example.relation.entity.BaseEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,7 +23,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Locker {
+public class Locker extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "LOCKER_ID")

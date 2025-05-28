@@ -13,6 +13,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,6 +28,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @EntityListeners(value = AuditingEntityListener.class)
+@Table(name = "JPA_ITEM")
 @Entity
 public class Item {
     // id, item_nm, price, stock, item_detail, item_sell_status, reg_time,
@@ -56,7 +58,7 @@ public class Item {
     @LastModifiedDate
     private LocalDateTime updateTime;
 
-    private enum ItemStatus {
+    public enum ItemStatus {
         SELL, SOLD_OUT
     }
 }
